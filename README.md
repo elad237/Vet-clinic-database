@@ -1,8 +1,16 @@
-# curriculum-databases-projects-template
-
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
+<div align="center">
+  <h1><b>vet-clinic-database</b></h1>
+  <h3>Example queries:</h3>
+  <img src="./1.png" alt="1" width="100%"  height="100%" />
+  <img src="./2.png" alt="2" width="100%"  height="100%" />
+  <img src="./3.png" alt="3" width="100%"  height="100%" />
+  <img src="./4.png" alt="4" width="100%"  height="100%" />
+  <img src="./5.png" alt="5" width="100%"  height="100%" />
+  <img src="./6.png" alt="6" width="100%"  height="100%" />
+  <img src="./7.png" alt="7" width="100%"  height="100%" />
+  <img src="./8.png" alt="8" width="100%"  height="100%" />
+  <br />
+</div>
 
 ## Getting Started
 
@@ -147,13 +155,30 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/elad237/Vet-clinic-database.git
 ```
 --->
 
 ### Install
 
 Install this project with:
+
+```sh
+  cd my-project
+  psql
+  CREATE TABLE vet_clinic;
+  /c vet_clinic;
+  CREATE TABLE animals (
+    id              INT GENERATED ALWAYS AS IDENTITY,
+    name            VARCHAR(250),
+    date_of_birth   DATE,
+    escape_attempts INT,
+    neutered        BOOLEAN,
+    weight_kg       DECIMAL,
+    PRIMARY KEY(id)
+);
+```
+
 
 <!--
 Example command:
@@ -208,17 +233,12 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Author**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **TUMBU BARTHOLOMEW ELAD**
+GitHub: [@githubhandle](https://github.com/elad237)
+- Twitter: [@twitterhandle](https://twitter.com/Elad59380989)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tumbu-elad-896ab2183/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,7 +260,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/elad237/Vet-clinic-database/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -270,13 +290,13 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **Can I use the project for any purpose?**
 
-  - [Answer_1]
+  - Yes, you can use this files for anything you need
 
-- **[Question_2]**
+- **Do I need to ask for permission?**
 
-  - [Answer_2]
+  - No need to ask for permission.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
