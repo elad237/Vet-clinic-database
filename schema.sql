@@ -1,79 +1,56 @@
 /* Database schema to keep the structure of entire database. */
 
-CREATE TABLE animals (
-    id              INT GENERATED ALWAYS AS IDENTITY,
-    name            VARCHAR(250),
-    date_of_birth   DATE,
-    escape_attempts INT,
-    neutered        BOOLEAN,
-    weight_kg       DECIMAL,
-    PRIMARY KEY(id)
-);
-
-ALTER TABLE animals ADD COLUMN species VARCHAR(250);
-
 CREATE TABLE owners(
-	id			INT GENERATED ALWAYS AS IDENTITY,
-	full_name	VARCHAR(250),
-	age			INT
+  id INT GENERATED ALWAYS AS IDENTITY,
+  full_name VARCHAR(20),
+  age INT,
+  PRIMARY KEY(id)
 );
 
 CREATE TABLE species(
-	id			INT GENERATED ALWAYS AS IDENTITY,
-	name		VARCHAR(250)
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(20),
+  PRIMARY KEY(id)
 );
 
-ALTER TABLE animals ADD COLUMN species_id INT;
-ALTER TABLE species ADD CONSTRAINT uniq_species_id_constraint PRIMARY KEY(id);
-ALTER TABLE animals
-ADD CONSTRAINT fk_species
-FOREIGN KEY (species_id)
-REFERENCES species(id)
-ON DELETE CASCADE;
+CREATE TABLE animals(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(20),
+  date_of_birth DATE,
+  escape_attempts INT,
+  neutered BOOLEAN,
+  weight_kg DECIMAL,
+  species_id INT REFERENCES species(id),
+  owner_id INT REFERENCES owners(id),
+  PRIMARY KEY(id)
+);
 
-ALTER TABLE animals ADD COLUMN owner_id INT;
-ALTER TABLE owners ADD CONSTRAINT uniq_owner_id_constraint PRIMARY KEY(id);
-ALTER TABLE animals
-ADD CONSTRAINT fk_owners
-FOREIGN KEY (owner_id)
-REFERENCES owners(id)
-ON DELETE CASCADE;
-
--- Create a table named vets with the following columns:
--- id: integer (set it as autoincremented PRIMARY KEY)
--- name: string
--- age: integer
--- date_of_graduation: date
 CREATE TABLE vets(
-    id                  INT GENERATED ALWAYS AS IDENTITY,
-    name                VARCHAR(250),
-    age                 INT,
-    date_of_graduation  DATE
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(20),
+  age INT,
+  date_of_graduation DATE,
+  PRIMARY KEY(id)
 );
 
-ALTER TABLE vets ADD CONSTRAINT uniq_vets_id_constraint PRIMARY KEY(id);
-
--- There is a many-to-many relationship between the tables species and vets: 
--- a vet can specialize in multiple species, and a species can have multiple 
--- vets specialized in it. Create a "join table" called specializations 
--- to handle this relationship.
 CREATE TABLE specializations(
-    species_id      INT,
-    vets_id         INT.
-    PRIMARY KEY (species_id, vets_id),
-    CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id),
-    CONSTRAINT fk_vets FOREIGN KEY(vets_id) REFERENCES vets(id)
+  id INT GENERATED ALWAYS AS IDENTITY,
+  species_id INT REFERENCES species(id),
+  vet_id INT REFERENCES vets(id),
+  PRIMARY KEY(id)
 );
 
--- There is a many-to-many relationship between the tables animals and vets: 
--- an animal can visit multiple vets and one vet can be visited by multiple 
--- animals. Create a "join table" called visits to handle this relationship, 
--- it should also keep track of the date of the visit.
 CREATE TABLE visits(
-    animals_id  INT,
-    vets_id     INT,
-    visit_date  DATE,
-    PRIMARY KEY (animals_id, vets_id, visit_date),
-    CONSTRAINT fk_animals FOREIGN KEY(animals_id) REFERENCES animals(id),
-    CONSTRAINT fk_vets FOREIGN KEY(vets_id) REFERENCES vets(id)
+  id INT GENERATED ALWAYS AS IDENTITY,
+  animal_id INT REFERENCES animals(id),
+  vet_id INT REFERENCES vets(id),
+  date_of_visit DATE,
+  PRIMARY KEY(id)
 );
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX index_visits_on_animal_id ON visits (animal_id); 
+CREATE INDEX index_visits_on_vet_id ON visits (vet_id); 
+CREATE INDEX index_owners_on_email ON owners (email); 
