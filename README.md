@@ -224,7 +224,7 @@ If you like this project give a thumbnail
 
 > Give credit to everyone who inspired your codebase.
 
-I would like to thank...
+I would like to thank microverse for give me the opportunity to execute this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
