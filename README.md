@@ -74,7 +74,12 @@ After you're finished please remove all the comments and instructions!
 # 📖 [vet-clinic-database] <a name="about-project"></a>
 
 
-**[vet-clinic-database]** is a...
+**[vet-clinic-database]** In the upcoming projects, you will use a relational database to create the data structure for a vet clinic. You will start with one table, and step by step, you will create a complete database with data about:
+
+animals
+animals' owners
+clinic employees
+visits
 
 ## 🛠 Built With <a name="built-with"></a>
 
