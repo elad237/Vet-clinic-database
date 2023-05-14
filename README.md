@@ -71,11 +71,17 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [vet-clinic-database] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+**[vet-clinic-database]** is a...
+In the upcoming projects, you will use a relational database to create the data structure for a vet clinic. You will start with one table, and step by step, you will create a complete database with data about:
+
+animals
+animals' owners
+clinic employees
+visits
 
 ## 🛠 Built With <a name="built-with"></a>
 
