@@ -48,7 +48,7 @@ CREATE TABLE visits(
   PRIMARY KEY(id)
 );
 
--- Add an email column to your owners table
+-- To add an email column to your owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 CREATE INDEX index_visits_on_animal_id ON visits (animal_id); 
