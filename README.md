@@ -122,9 +122,6 @@ visits
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
 
 > Add a link to your deployed project.
 
@@ -142,7 +139,10 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need to:
+
+Install Git
+Install Postgres
 
 <!--
 Example command:
@@ -197,7 +197,7 @@ Example command:
 
 ### Usage
 
-To run the project, execute the following command:
+To use queries provided in this project run psql command and copy all commands one by one in psql shell
 
 <!--
 Example command:
@@ -207,29 +207,6 @@ Example command:
 ```
 --->
 
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -253,10 +230,8 @@ GitHub: [@githubhandle](https://github.com/elad237)
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+ 
+- [ ] UI 👀
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
