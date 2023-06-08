@@ -73,9 +73,8 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Vet clinic database] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+**[Vet clinic database]** In this project, you will use a relational database to create the initial data structure for a vet clinic. You will create a table to store animals' information, insert some data into it, and query it.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -287,8 +286,6 @@ I would like to thank...
 <!-- FAQ (optional) -->
 
 ## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
 
 - **Can I use the project for any purpose?**
 
